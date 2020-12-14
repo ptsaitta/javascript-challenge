@@ -13,6 +13,13 @@ funct buildTable(data) {
     data.forEach(tableRow) function() {
         const row = tbody.append("tr")
 
+    //go through each row and add each value in cell in that row
+        Object.values(tableRow).forEach(value) function() {
+            const cell = row.append("td");
+            //update cell with tha actual value
+            cell.append(value)
+
+        }
     }
 
 
