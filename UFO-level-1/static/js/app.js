@@ -30,8 +30,8 @@ function buildTable(data) {
 
 function clickHandler() {
     
-    //set variable for datetime
-    const datetime = d3.select("#datetime");
+    //set variable for datetime and select value..
+    const datetime = d3.select("#datetime").values();
     let searchData = tableData;
 
     //grab datetime and filter data for that search date
@@ -48,6 +48,7 @@ function clickHandler() {
 // filter table button is attached to
 // <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
 // so use id="filter-btn" to target in on
+// selectAll make sure all hits with given search term are returned
 
 d3.selectAll("#filter-btn").on("click", clickHandler);
 
