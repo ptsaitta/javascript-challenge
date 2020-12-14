@@ -10,14 +10,14 @@ funct buildTable(data) {
     //iteratively go through to add row to put each result's data in
 
     data.forEach(tableRow) function() {
-        const row = tbody.append("tr")
+        const row = tbody.append("tr");
 
     //go through each row and add each value in cell in that row
         Object.values(tableRow).forEach(value) function() {
             const cell = row.append("td");
             
             //update cell with tha actual value
-            cell.append(value)
+            cell.text(value);
 
         });
     });
@@ -49,5 +49,5 @@ funct clickHandler() {
 // <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
 // so use id="filter-btn" to target in on
 
-d3.select("#filter-btn").on("click", clickHandler);
+d3.selectAll("#filter-btn").on("click", clickHandler);
 
