@@ -31,16 +31,16 @@ function buildTable(data) {
 function clickHandler() {
     
     //set variable for datetime and select value..
-    const datetime = d3.select("#datetime").values();
+    const datetime = d3.select("#datetime").property("value");
     let searchData = tableData;
 
     //grab datetime and filter data for that search date
     //arrow function to project datetime-relevant data
-    let filterData = searchData.filter(row => row.datetime == datetime);
+    let filterData = searchData.filter(row => row.datetime === datetime);
 
     //build table with this filtered data
 
-    buildTable(filteredData);
+    buildTable(filterData);
 
 }
 
