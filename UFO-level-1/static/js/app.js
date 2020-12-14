@@ -29,6 +29,17 @@ funct buildTable(data) {
 // so use id="datetime" to select user input
 
 funct clickHandler() {
+    
+    //set variable for datetime
     const datetime = d3.select("#datetime");
     let searchData = tableData;
+
+    //grab datetime and filter data for that search date
+    //arrow function to project datetime-relevant data
+    let filterData = searchData.filter(row => row.datetime == datetime);
+
+    //build table with this filtered data
+
+    buildTable(filteredData);
+
 }
