@@ -8,17 +8,17 @@ const tbody = d3.select("tbody");
 function buildTable(data) {
 
     //need to remove previous table entries when new table is built according to datetime filter
-    d3.selectAll("tbody").remove()
+    tbody.html("")
     //iteratively go through to add row to put each result's data in
 
     data.forEach((tableRow) => {
         const row = tbody.append("tr");
 
-    //go through each row and add each value in cell in that row
+    //go through each row and add a cell for each entry in that row
         Object.values(tableRow).forEach((value) => {
             const cell = row.append("td");
             
-            //update cell with tha actual value
+            //update cell with the actual value
             cell.text(value);
 
         });
