@@ -1,19 +1,19 @@
 // from data.js
-var tableData = data;
+const tableData = data;
 
 // looking at index.html, data should be placed in <tbody>
 
 const tbody = d3.select("tbody");
 
-funct buildTable(data) {
+function buildTable(data) {
 
     //iteratively go through to add row to put each result's data in
 
-    data.forEach(tableRow) function() {
+    data.forEach((tableRow) => {
         const row = tbody.append("tr");
 
     //go through each row and add each value in cell in that row
-        Object.values(tableRow).forEach(value) function() {
+        Object.values(tableRow).forEach((value) => {
             const cell = row.append("td");
             
             //update cell with tha actual value
@@ -28,7 +28,7 @@ funct buildTable(data) {
 // <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
 // so use id="datetime" to select user input
 
-funct clickHandler() {
+function clickHandler() {
     
     //set variable for datetime
     const datetime = d3.select("#datetime");
@@ -51,3 +51,4 @@ funct clickHandler() {
 
 d3.selectAll("#filter-btn").on("click", clickHandler);
 
+buildTable(tableData);
