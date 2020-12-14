@@ -7,6 +7,8 @@ const tbody = d3.select("tbody");
 
 function buildTable(data) {
 
+    //need to remove previous table entries when new table is built according to datetime filter
+    d3.selectAll("tbody").remove()
     //iteratively go through to add row to put each result's data in
 
     data.forEach((tableRow) => {
@@ -52,4 +54,5 @@ function clickHandler() {
 
 d3.selectAll("#filter-btn").on("click", clickHandler);
 
+//default table
 buildTable(tableData);
