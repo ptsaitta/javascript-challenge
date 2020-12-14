@@ -43,3 +43,11 @@ funct clickHandler() {
     buildTable(filteredData);
 
 }
+
+// construct event listener to listen for even trigger
+// filter table button is attached to
+// <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+// so use id="filter-btn" to target in on
+
+d3.select("#filter-btn").on("click", clickHandler);
+
